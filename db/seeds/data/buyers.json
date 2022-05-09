@@ -1,0 +1,14 @@
+[
+    {
+        "name": "John Doe",
+        "email": "johndoe@gmail.com",
+        "password": "cGFzc3dvcmQ=",
+        "shipping_address": "221B Baker Street"
+    },
+    {
+        "name": "Mary Doe",
+        "email": "marydoe@gmail.com",
+        "password": "cGFzc3dvcmQ=",
+        "shipping_address": "221B Baker Street"
+    }
+]
