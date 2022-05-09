@@ -1,0 +1,14 @@
+[
+    {
+        "seller_id": "1",
+        "name": "Oil",
+        "description": "",
+        "price": "1000000"
+    },
+    {
+        "seller_id": "2",
+        "name": "Compose",
+        "description": "",
+        "price": "5000"
+    }
+]

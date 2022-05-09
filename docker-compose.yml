@@ -1,0 +1,54 @@
+version: '3'
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    depends_on:
+      - "db"
+    networks:
+      - fullstack
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: go_database
+      MYSQL_USER: go_test
+      MYSQL_PASSWORD: password
+      TZ: 'Asia/Jakarta'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - 3306:3306
+    networks:
+      - fullstack
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 5003:80
+    environment:
+      - 'PMA_HOST=db'
+      - 'PMA_PORT=3306'
+    networks:
+      - fullstack
+
+volumes:
+  db-data:
+    driver: local
+
+# Networks to be created to facilitate communication between containers
+networks:
+  fullstack:
+    driver: bridge

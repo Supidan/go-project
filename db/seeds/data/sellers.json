@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Jonas",
+        "email": "jonas@gmail.com",
+        "password": "cGFzc3dvcmQ=",
+        "pickup_address": "4181 Khale Street"
+    },
+    {
+        "name": "Bob",
+        "email": "bob@gmail.com",
+        "password": "cGFzc3dvcmQ=",
+        "pickup_address": "4922 Clinton Street"
+    }
+]
